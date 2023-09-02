@@ -1,0 +1,34 @@
+version: '3'
+
+services:
+  tla-db:
+    image: postgres:alpine
+    container_name: tla-db
+    environment:
+      POSTGRES_USER: lrsql_user
+      POSTGRES_PASSWORD: lrsql_password
+      POSTGRES_DB: lrsql_db
+    volumes:
+      - ./tmp/db:/var/lib/postgresql/data
+    hostname: tla-db
+  lrs:
+    image: yetanalytics/lrsql:latest
+    container_name: lrs
+    restart: always
+    environment:
+      LRSQL_API_KEY_DEFAULT: my_key
+      LRSQL_API_SECRET_DEFAULT: my_secret
+      LRSQL_ADMIN_USER_DEFAULT: my_username
+      LRSQL_ADMIN_PASS_DEFAULT: my_password
+      LRSQL_DB_HOST: tla-db
+      LRSQL_DB_NAME: lrsql_db
+      LRSQL_DB_USER: lrsql_user
+      LRSQL_DB_PASSWORD: lrsql_password
+      LRSQL_POOL_INITIALIZATION_FAIL_TIMEOUT: 10000
+      LRSQL_ALLOW_ALL_ORIGINS: true
+    command:
+      - /lrsql/bin/run_postgres.sh
+    ports:
+      - "8080:8080"
+    depends_on:
+      - tla-db
