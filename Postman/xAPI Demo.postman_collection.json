@@ -1,0 +1,361 @@
+{
+	"info": {
+		"_postman_id": "2545f82c-44df-4956-adac-13f3d7d0e038",
+		"name": "xAPI Demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16246037",
+		"_collection_link": "https://grey-shuttle-236757.postman.co/workspace/BITM~e0b64232-a0c3-4f9e-b6a8-f453b964a49c/collection/16246037-2545f82c-44df-4956-adac-13f3d7d0e038?action=share&source=collection_link&creator=16246037"
+	},
+	"item": [
+		{
+			"name": "initialized",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "my_secret",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "my_key",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Experience-API-Version",
+						"value": "1.0.3",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"actor\": {\r\n        \"mbox\": \"mailto:user@email.com\",\r\n        \"objectType\": \"Agent\"\r\n    },\r\n    \"verb\": {\r\n        \"id\": \"http://adlnet.gov/expapi/verbs/initialized\",\r\n        \"display\": {\r\n            \"en-US\": \"initialized\"\r\n        }\r\n    },\r\n    \"object\": {\r\n        \"id\": \"http:/betaflixinc.com/welding/module/1\",\r\n        \"definition\": {\r\n            \"name\": {\r\n                \"en-US\": \"Welding Module 1\"\r\n            },\r\n            \"description\": {\r\n                \"en-US\": \"Module 1 for BetaFlix Welding Cirriculum\"\r\n            }\r\n        },\r\n        \"objectType\": \"Activity\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/xapi/statements",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"xapi",
+						"statements"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "attempted",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "my_secret",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "my_key",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Experience-API-Version",
+						"value": "1.0.3",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"actor\": {\r\n        \"mbox\": \"mailto:user@email.com\",\r\n        \"objectType\": \"Agent\"\r\n    },\r\n    \"verb\": {\r\n        \"id\": \"http://adlnet.gov/expapi/verbs/attempted\",\r\n        \"display\": {\r\n            \"en-US\": \"attempted\"\r\n        }\r\n    },\r\n    \"object\": {\r\n        \"id\": \"http://adlnet.gov/expapi/activities/example\",\r\n        \"definition\": {\r\n            \"name\": {\r\n                \"en-US\": \"Activity 1\"\r\n            },\r\n            \"description\": {\r\n                \"en-US\": \"Activity 1 in Module 1 BetaFlix's Welding Curriculum\"\r\n            }\r\n        },\r\n        \"objectType\": \"Activity\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/xapi/statements",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"xapi",
+						"statements"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "completed",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "my_secret",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "my_key",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Experience-API-Version",
+						"value": "1.0.3",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"actor\": {\r\n        \"mbox\": \"mailto:user@email.com\",\r\n        \"objectType\": \"Agent\"\r\n    },\r\n    \"verb\": {\r\n        \"id\": \"http://adlnet.gov/expapi/verbs/completed\",\r\n        \"display\": {\r\n            \"en-US\": \"completed\"\r\n        }\r\n    },\r\n    \"object\": {\r\n        \"id\": \"http://adlnet.gov/expapi/activities/example\",\r\n        \"definition\": {\r\n            \"name\": {\r\n                \"en-US\": \"Activity 1\"\r\n            },\r\n            \"description\": {\r\n                \"en-US\": \"Activity 1 in Module 1 BetaFlix's Welding Curriculum\"\r\n            }\r\n        },\r\n        \"objectType\": \"Activity\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/xapi/statements",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"xapi",
+						"statements"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "passed",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "my_secret",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "my_key",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Experience-API-Version",
+						"value": "1.0.3",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"actor\": {\r\n        \"mbox\": \"mailto:user@email.com\",\r\n        \"objectType\": \"Agent\"\r\n    },\r\n    \"verb\": {\r\n        \"id\": \"http://adlnet.gov/expapi/verbs/passed\",\r\n        \"display\": {\r\n            \"en-US\": \"passed\"\r\n        }\r\n    },\r\n    \"object\": {\r\n        \"id\": \"http://adlnet.gov/expapi/activities/example\",\r\n        \"definition\": {\r\n            \"name\": {\r\n                \"en-US\": \"Activity 1\"\r\n            },\r\n            \"description\": {\r\n                \"en-US\": \"Activity 1 in Module 1 BetaFlix's Welding Curriculum\"\r\n            }\r\n        },\r\n        \"objectType\": \"Activity\"\r\n    },\r\n    \"result\": {\r\n        \"score\": {\r\n            \"raw\": 80,\r\n            \"max\": 100\r\n        },\r\n        \"success\": true,\r\n        \"completion\": true\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/xapi/statements",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"xapi",
+						"statements"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "failed",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "my_secret",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "my_key",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Experience-API-Version",
+						"value": "1.0.3",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"actor\": {\r\n        \"mbox\": \"mailto:user@email.com\",\r\n        \"objectType\": \"Agent\"\r\n    },\r\n    \"verb\": {\r\n        \"id\": \"http://adlnet.gov/expapi/verbs/failed\",\r\n        \"display\": {\r\n            \"en-US\": \"failed\"\r\n        }\r\n    },\r\n    \"object\": {\r\n        \"id\": \"http://adlnet.gov/expapi/activities/example\",\r\n        \"definition\": {\r\n            \"name\": {\r\n                \"en-US\": \"Activity 1\"\r\n            },\r\n            \"description\": {\r\n                \"en-US\": \"Activity 1 in Module 1 BetaFlix's Welding Curriculum\"\r\n            }\r\n        },\r\n        \"objectType\": \"Activity\"\r\n    },\r\n    \"result\": {\r\n        \"score\": {\r\n            \"raw\": 55,\r\n            \"max\": 100\r\n        },\r\n        \"success\": false,\r\n        \"completion\": true\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/xapi/statements",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"xapi",
+						"statements"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Statements",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "my_secret",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "my_key",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Experience-API-Version",
+						"value": "1.0.3",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "agent",
+						"value": "\"lane.arnold@betaflixinc.com\"",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/xapi/statements",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"xapi",
+						"statements"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
